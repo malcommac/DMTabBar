@@ -2,7 +2,7 @@
 //  DMAppDelegate.h
 //  DMTabBar
 //
-//  Created by malcom on 6/18/12.
+//  Created by Daniele Margutti on 6/18/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

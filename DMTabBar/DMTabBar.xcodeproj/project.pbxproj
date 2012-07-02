@@ -13,6 +13,11 @@
 		D9C42DC0158F85B700919C4A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D9C42DBE158F85B700919C4A /* Credits.rtf */; };
 		D9C42DC3158F85B700919C4A /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C42DC2158F85B700919C4A /* DMAppDelegate.m */; };
 		D9C42DC6158F85B700919C4A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C42DC4158F85B700919C4A /* MainMenu.xib */; };
+		D9C42DCE158F85C200919C4A /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C42DCD158F85C200919C4A /* DMTabBar.m */; };
+		D9C42DD1158F88DA00919C4A /* DMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C42DD0158F88DA00919C4A /* DMTabBarItem.m */; };
+		D9C42DD4158FDB0500919C4A /* tabBarItem1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C42DD2158FDB0500919C4A /* tabBarItem1.png */; };
+		D9C42DDC158FE25D00919C4A /* tabBarItem2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C42DDB158FE25D00919C4A /* tabBarItem2.png */; };
+		D9C42DDE158FE27C00919C4A /* tabBarItem3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C42DDD158FE27C00919C4A /* tabBarItem3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +26,21 @@
 		D9C42DB2158F85B700919C4A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D9C42DB3158F85B700919C4A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D9C42DB4158F85B700919C4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D9C42DB7158F85B700919C4A /* DMTabBar-Info.plist */ = {isa = PBXFileReference; path = "DMTabBar-Info.plist"; sourceTree = "<group>"; };
+		D9C42DB7158F85B700919C4A /* DMTabBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DMTabBar-Info.plist"; sourceTree = "<group>"; };
 		D9C42DB9158F85B700919C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9C42DBB158F85B700919C4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D9C42DBD158F85B700919C4A /* DMTabBar-Prefix.pch */ = {isa = PBXFileReference; path = "DMTabBar-Prefix.pch"; sourceTree = "<group>"; };
+		D9C42DBD158F85B700919C4A /* DMTabBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMTabBar-Prefix.pch"; sourceTree = "<group>"; };
 		D9C42DBF158F85B700919C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D9C42DC1158F85B700919C4A /* DMAppDelegate.h */ = {isa = PBXFileReference; path = DMAppDelegate.h; sourceTree = "<group>"; };
-		D9C42DC2158F85B700919C4A /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
+		D9C42DC1158F85B700919C4A /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D9C42DC2158F85B700919C4A /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D9C42DC5158F85B700919C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D9C42DCC158F85C200919C4A /* DMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMTabBar.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D9C42DCD158F85C200919C4A /* DMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBar.m; sourceTree = "<group>"; };
+		D9C42DCF158F88DA00919C4A /* DMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBarItem.h; sourceTree = "<group>"; };
+		D9C42DD0158F88DA00919C4A /* DMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBarItem.m; sourceTree = "<group>"; };
+		D9C42DD2158FDB0500919C4A /* tabBarItem1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarItem1.png; sourceTree = "<group>"; };
+		D9C42DDB158FE25D00919C4A /* tabBarItem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarItem2.png; sourceTree = "<group>"; };
+		D9C42DDD158FE27C00919C4A /* tabBarItem3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarItem3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +94,9 @@
 		D9C42DB5158F85B700919C4A /* DMTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				D9C42DC1158F85B700919C4A /* DMAppDelegate.h */,
-				D9C42DC2158F85B700919C4A /* DMAppDelegate.m */,
-				D9C42DC4158F85B700919C4A /* MainMenu.xib */,
+				D9C42DDA158FDDEC00919C4A /* DMTabBar Core Class */,
+				D9C42DE0158FE47100919C4A /* Main View Controller */,
+				D9C42DDF158FE46900919C4A /* Tab Bar Icons */,
 				D9C42DB6158F85B700919C4A /* Supporting Files */,
 			);
 			path = DMTabBar;
@@ -100,6 +112,37 @@
 				D9C42DBE158F85B700919C4A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9C42DDA158FDDEC00919C4A /* DMTabBar Core Class */ = {
+			isa = PBXGroup;
+			children = (
+				D9C42DCC158F85C200919C4A /* DMTabBar.h */,
+				D9C42DCD158F85C200919C4A /* DMTabBar.m */,
+				D9C42DCF158F88DA00919C4A /* DMTabBarItem.h */,
+				D9C42DD0158F88DA00919C4A /* DMTabBarItem.m */,
+			);
+			name = "DMTabBar Core Class";
+			sourceTree = "<group>";
+		};
+		D9C42DDF158FE46900919C4A /* Tab Bar Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D9C42DDB158FE25D00919C4A /* tabBarItem2.png */,
+				D9C42DD2158FDB0500919C4A /* tabBarItem1.png */,
+				D9C42DDD158FE27C00919C4A /* tabBarItem3.png */,
+			);
+			name = "Tab Bar Icons";
+			sourceTree = "<group>";
+		};
+		D9C42DE0158FE47100919C4A /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9C42DC1158F85B700919C4A /* DMAppDelegate.h */,
+				D9C42DC2158F85B700919C4A /* DMAppDelegate.m */,
+				D9C42DC4158F85B700919C4A /* MainMenu.xib */,
+			);
+			name = "Main View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +199,9 @@
 				D9C42DBA158F85B700919C4A /* InfoPlist.strings in Resources */,
 				D9C42DC0158F85B700919C4A /* Credits.rtf in Resources */,
 				D9C42DC6158F85B700919C4A /* MainMenu.xib in Resources */,
+				D9C42DD4158FDB0500919C4A /* tabBarItem1.png in Resources */,
+				D9C42DDC158FE25D00919C4A /* tabBarItem2.png in Resources */,
+				D9C42DDE158FE27C00919C4A /* tabBarItem3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +214,8 @@
 			files = (
 				D9C42DBC158F85B700919C4A /* main.m in Sources */,
 				D9C42DC3158F85B700919C4A /* DMAppDelegate.m in Sources */,
+				D9C42DCE158F85C200919C4A /* DMTabBar.m in Sources */,
+				D9C42DD1158F88DA00919C4A /* DMTabBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
