@@ -4,6 +4,8 @@ DMTabBar is a XCode 4.x like segmented control. It's emulate the behavior of the
 
 Daniele Margutti, <http://www.danielem.org>
 
+![DMTabBar Example Project](http://danielemargutti.com/wp-content/uploads/2012/06/DMTabBar.png)
+
 ## How to get started
 
 It's very simple to use:
