@@ -55,7 +55,7 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[DMTabBarItem] tag=%i - title=%@", self.tag,self.title];
+    return [NSString stringWithFormat:@"[DMTabBarItem] tag=%i - title=%@", (int)self.tag,self.title];
 }
 
 #pragma mark - Properties redirects
