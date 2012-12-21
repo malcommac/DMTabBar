@@ -13,8 +13,7 @@
 // (Colors and gradient from Stephan Michels Softwareentwicklung und Beratung - SMTabBar)
 #define kDMTabBarGradientColor_Start                        [NSColor colorWithCalibratedRed:0.851f green:0.851f blue:0.851f alpha:1.0f]
 #define kDMTabBarGradientColor_End                          [NSColor colorWithCalibratedRed:0.700f green:0.700f blue:0.700f alpha:1.0f]
-#define KDMTabBarGradient                                   [[NSGradient alloc] initWithStartingColor: kDMTabBarGradientColor_Start \
-                                                                                          endingColor: kDMTabBarGradientColor_End]
+#define KDMTabBarGradient                                   
 
 // Border color of the bar
 #define kDMTabBarBorderColor                                [NSColor colorWithDeviceWhite:0.2 alpha:1.0f]
@@ -42,12 +41,38 @@
 @synthesize selectedIndex,selectedTabBarItem;
 @synthesize tabBarItems;
 
+- (id)initWithFrame:(NSRect)frameRect
+{
+    if (self = [super initWithFrame:frameRect])
+    {
+        [self setDefaultColors];
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder])
+    {
+        [self setDefaultColors];
+    }
+    return self;
+}
+
+- (void)setDefaultColors
+{
+    self.gradientColorStart = kDMTabBarGradientColor_Start;
+    self.gradientColorEnd = kDMTabBarGradientColor_End;
+    self.borderColor = kDMTabBarBorderColor;
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
     // Draw bar gradient
-    [KDMTabBarGradient drawInRect:self.bounds angle:90.0];
+    [[[NSGradient alloc] initWithStartingColor:self.gradientColorStart endingColor:self.gradientColorEnd] drawInRect:self.bounds angle:90.0];
     
     // Draw drak gray bottom border
-    [kDMTabBarBorderColor setStroke];
+    [_borderColor setStroke];
     [NSBezierPath setDefaultLineWidth:0.0f];
     [NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds)) 
                               toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds))];
