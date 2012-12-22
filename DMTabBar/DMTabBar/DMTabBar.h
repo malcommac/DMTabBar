@@ -33,6 +33,9 @@ typedef void (^DMTabBarEventsHandler)(DMTabBarItemSelectionType selectionType, D
 // change selected item by passing a new index { 0 < index < tabBarItems.count }
 @property (nonatomic,assign) NSUInteger         selectedIndex;
 
+@property (nonatomic,strong) NSColor *gradientColorStart;
+@property (nonatomic,strong) NSColor *gradientColorEnd;
+@property (nonatomic,strong) NSColor *borderColor;
 
 // Handle selection change events using blocks
 - (void) handleTabBarItemSelection:(DMTabBarEventsHandler) selectionHandler;
