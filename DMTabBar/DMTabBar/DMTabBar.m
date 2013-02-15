@@ -68,14 +68,21 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    // Draw bar gradient
-    [[[NSGradient alloc] initWithStartingColor:self.gradientColorStart endingColor:self.gradientColorEnd] drawInRect:self.bounds angle:90.0];
+    
+    // Draw bar gradient if its color is set
+    if (_gradientColorStart && _gradientColorEnd)
+    {
+        [[[NSGradient alloc] initWithStartingColor:self.gradientColorStart endingColor:self.gradientColorEnd] drawInRect:self.bounds angle:90.0];
+    }
     
     // Draw drak gray bottom border
-    [_borderColor setStroke];
-    [NSBezierPath setDefaultLineWidth:0.0f];
-    [NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds)) 
-                              toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds))];
+    if (_borderColor)
+    {
+        [_borderColor setStroke];
+        [NSBezierPath setDefaultLineWidth:0.0f];
+        [NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds))
+                                  toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds))];
+    }
 }
 
 - (BOOL) isFlipped {
