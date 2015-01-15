@@ -69,11 +69,11 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     return tabBarItemButton.image;  
 }
 
-- (void) setTag:(NSUInteger)newTag {  
+- (void) setTag:(NSInteger)newTag {
     tabBarItemButton.tag = newTag; 
 }
 
-- (NSUInteger) tag {  
+- (NSInteger) tag {  
     return tabBarItemButton.tag;    
 }
 
