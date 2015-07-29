@@ -40,4 +40,7 @@ typedef void (^DMTabBarEventsHandler)(DMTabBarItemSelectionType selectionType, D
 // Handle selection change events using blocks
 - (void) handleTabBarItemSelection:(DMTabBarEventsHandler) selectionHandler;
 
+@property (nonatomic, assign) BOOL centerTabs; // should the tabs be drawn centered in the view or offset?
+@property (nonatomic, assign) CGFloat leftOffset; // offset value from left if tabs are not centered in view (default 10)
+
 @end

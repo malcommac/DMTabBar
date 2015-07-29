@@ -33,6 +33,7 @@
 - (void) removeAllTabBarItems;
 // Handle click on a single item (change selection, post event to the handler)
 - (void) selectTabBarItem:(id)sender;
+- (void) setDefaults;
 
 @end
 
@@ -45,7 +46,7 @@
 {
     if (self = [super initWithFrame:frameRect])
     {
-        [self setDefaultColors];
+        [self setDefaults];
     }
     
     return self;
@@ -55,16 +56,18 @@
 {
     if (self = [super initWithCoder:aDecoder])
     {
-        [self setDefaultColors];
+        [self setDefaults];
     }
     return self;
 }
 
-- (void)setDefaultColors
+- (void)setDefaults
 {
     self.gradientColorStart = kDMTabBarGradientColor_Start;
     self.gradientColorEnd = kDMTabBarGradientColor_End;
     self.borderColor = kDMTabBarBorderColor;
+	self.centerTabs = YES;
+	self.leftOffset = 10.0;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -130,7 +133,7 @@
 - (void) layoutSubviews {
     NSUInteger buttonsNumber = [self.tabBarItems count];
     CGFloat totalWidth = (buttonsNumber*kDMTabBarItemWidth);
-    __block CGFloat offset_x = floorf((NSWidth(self.bounds)-totalWidth)/2.0f);
+	__block CGFloat offset_x = (self.centerTabs) ? floorf((NSWidth(self.bounds)-totalWidth)/2.0f) : self.leftOffset;
     [self.tabBarItems enumerateObjectsUsingBlock:^(DMTabBarItem* tabBarItem, NSUInteger idx, BOOL *stop) {
         tabBarItem.tabBarItemButton.frame = NSMakeRect(offset_x, NSMinY(self.bounds), kDMTabBarItemWidth, NSHeight(self.bounds));
         offset_x += kDMTabBarItemWidth;
