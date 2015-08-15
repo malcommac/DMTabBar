@@ -23,17 +23,17 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
 @interface DMTabBarButtonCell : NSButtonCell { }
 @end
 
-@interface DMTabBarItem() {
-    NSButton*       tabBarItemButton;
-}
+@interface DMTabBarItem() // Private properties & methods
+// We'll use a customized NSButton (+NSButtonCell) and apply it inside the bar for each item.
+// You should never access to this element, but only with the DMTabBarItem istance itself.
+// The properties "tag", "state" are overridden from NSCell to refer to "tabBarItem".
+@property (nonatomic, strong, readwrite)  NSButton* tabBarItemButton;
 @end
 
 @implementation DMTabBarItem
 
-@synthesize enabled,icon,toolTip;
-@synthesize tag;
+@synthesize icon,toolTip;
 @synthesize tabBarItemButton;
-@synthesize state;
 
 + (DMTabBarItem *) tabBarItemWithIcon:(NSImage *) iconImage tag:(NSUInteger) itemTag {
     return [[DMTabBarItem alloc] initWithIcon:iconImage tag:itemTag];
@@ -43,12 +43,12 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     self = [super init];
     if (self) {
         // Create associated NSButton to place inside the bar (it's customized by DMTabBarButtonCell with a special gradient for selected state)
-        tabBarItemButton = [[NSButton alloc] initWithFrame:NSZeroRect];
-        tabBarItemButton.cell = [[DMTabBarButtonCell alloc] init];
-        tabBarItemButton.image = iconImage;
-        [tabBarItemButton setEnabled:YES];
-        tabBarItemButton.tag = itemTag;
-        [tabBarItemButton sendActionOn:NSLeftMouseDownMask];
+        self.tabBarItemButton = [[NSButton alloc] initWithFrame:NSZeroRect];
+        self.tabBarItemButton.cell = [[DMTabBarButtonCell alloc] init];
+        self.tabBarItemButton.image = iconImage;
+        self.tabBarItemButton.enabled = YES;
+        self.tabBarItemButton.tag = itemTag;
+        [self.tabBarItemButton sendActionOn:NSLeftMouseDownMask];
     }
     return self;
 }
@@ -59,54 +59,54 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
 
 #pragma mark - Properties redirects
 
-// We simply redirects properties to the the NSButton class
+// We simply redirect properties to the the NSButton class
 
 - (void) setIcon:(NSImage *)newIcon { 
-    tabBarItemButton.image = newIcon;   
+    self.tabBarItemButton.image = newIcon;
 }
 
 - (NSImage *) icon {   
-    return tabBarItemButton.image;  
+    return self.tabBarItemButton.image;
 }
 
 - (void) setTag:(NSInteger)newTag {
-    tabBarItemButton.tag = newTag; 
+    self.tabBarItemButton.tag = newTag;
 }
 
 - (NSInteger) tag {  
-    return tabBarItemButton.tag;    
+    return self.tabBarItemButton.tag;
 }
 
 - (void) setToolTip:(NSString *)newToolTip {   
-    tabBarItemButton.toolTip = newToolTip;  
+    self.tabBarItemButton.toolTip = newToolTip;
 }
 
 - (NSString *) toolTip {  
-    return tabBarItemButton.toolTip;    
+    return self.tabBarItemButton.toolTip;
 }
 
 - (void) setKeyEquivalentModifierMask:(NSUInteger)newKeyEquivalentModifierMask {
-    tabBarItemButton.keyEquivalentModifierMask = newKeyEquivalentModifierMask; 
+    self.tabBarItemButton.keyEquivalentModifierMask = newKeyEquivalentModifierMask;
 }
 
 - (NSUInteger) keyEquivalentModifierMask {
-    return tabBarItemButton.keyEquivalentModifierMask; 
+    return self.tabBarItemButton.keyEquivalentModifierMask;
 }
 
 - (void) setKeyEquivalent:(NSString *)newKeyEquivalent {
-    tabBarItemButton.keyEquivalent = newKeyEquivalent;
+    self.tabBarItemButton.keyEquivalent = newKeyEquivalent;
 }
 
 - (NSString *) keyEquivalent { 
-    return tabBarItemButton.keyEquivalent;  
+    return self.tabBarItemButton.keyEquivalent;
 }
 
 - (void) setState:(NSInteger)value {
-    tabBarItemButton.state = value;
+    self.tabBarItemButton.state = value;
 }
 
 - (NSInteger) state {
-    return tabBarItemButton.state;
+    return self.tabBarItemButton.state;
 }
 
 @end
