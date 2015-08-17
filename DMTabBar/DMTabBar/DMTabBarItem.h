@@ -11,15 +11,17 @@
 
 @interface DMTabBarItem : NSButtonCell { }
 
-@property (nonatomic,assign)    BOOL        enabled;                        // YES or NO to enable or disable the item
-@property (nonatomic,strong)    NSImage*    icon;                           // That's the image of the item
-@property (nonatomic,strong)    NSString*   toolTip;                        // Tool tip message
-@property (nonatomic,assign)    NSInteger  tag;                            // Tag of the item
-@property (nonatomic,assign)    NSInteger   state;                          // Current state (NSOnState = selected)
+// Properties overridden from NSCell:
+// self.enabled													// YES or NO to enable or disable the item
+// self.tag														// Tag of the item
+// self.state													// Current state (NSOnState = selected)
+
+@property (nonatomic,strong)    NSImage*    icon;               // That's the image of the item
+@property (nonatomic,strong)    NSString*   toolTip;            // Tool tip message
 
 // Internal use
 // We'll use a customized NSButton (+NSButtonCell) and apply it inside the bar for each item.
-// You should never access to this element, but only with the DMTabBarItem istance itself.
+// You should never access this element except from DMTabBarItem & DMTabBar.
 @property (nonatomic,readonly)  NSButton*   tabBarItemButton;
 
 // Init methods
