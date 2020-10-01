@@ -1,6 +1,6 @@
 # DMTabBar
 
-DMTabBar is a XCode 4.x like segmented control. It's emulate the behavior of the segmented control used inside XCode's Inspector Window.
+DMTabBar is a Xcode 4.x like segmented control. It's emulate the behavior of the segmented control used inside Xcode's Inspector Window.
 
 Daniele Margutti, <http://www.danielem.org>
 
