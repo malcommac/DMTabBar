@@ -44,12 +44,12 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     self = [super init];
     if (self) {
         // Create associated NSButton to place inside the bar (it's customized by DMTabBarButtonCell with a special gradient for selected state)
-        tabBarItemButton = [[NSButton alloc] initWithFrame:NSZeroRect];
-        tabBarItemButton.cell = [[DMTabBarButtonCell alloc] init];
-        tabBarItemButton.image = iconImage;
-        [tabBarItemButton setEnabled:YES];
-        tabBarItemButton.tag = itemTag;
-        [tabBarItemButton sendActionOn:NSLeftMouseDownMask];
+        self.tabBarItemButton = [[NSButton alloc] initWithFrame:NSZeroRect];
+        self.tabBarItemButton.cell = [[DMTabBarButtonCell alloc] init];
+        self.tabBarItemButton.image = iconImage;
+        self.tabBarItemButton.enabled = YES;
+        self.tabBarItemButton.tag = itemTag;
+	[self.tabBarItemButton sendActionOn:NSEventMaskLeftMouseDown];
     }
     return self;
 }
@@ -130,7 +130,7 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
 }
 
 - (void) drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
-    if (self.state == NSOnState) { 
+	if (self.state == NSControlStateValueOn) { 
         // If selected we need to draw the border new background for selection (otherwise we will use default back color)
         // Save current context
         [[NSGraphicsContext currentContext] saveGraphicsState];

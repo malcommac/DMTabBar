@@ -140,7 +140,7 @@
         [self.tabBarItems enumerateObjectsUsingBlock:^(DMTabBarItem * tabBarItem, NSUInteger idx, BOOL *stop) {
             NSButton *itemButton = tabBarItem.tabBarItemButton;
             itemButton.frame = NSMakeRect(0.0f, 0.0f, kDMTabBarItemWidth, NSHeight(self.bounds));
-            itemButton.state = (itemIndex == selectedItemIndex ? NSOnState : NSOffState);
+			itemButton.state = (itemIndex == selectedItemIndex ? NSControlStateValueOn : NSControlStateValueOff);
             itemButton.action = @selector(selectTabBarItem:);
             itemButton.target = self;
             [self addSubview:itemButton];
@@ -164,7 +164,7 @@
     
     __block NSUInteger buttonIndex = 0;
     [self.tabBarItems enumerateObjectsUsingBlock:^(DMTabBarItem* tabBarItem, NSUInteger idx, BOOL *stop) {
-        tabBarItem.state = (buttonIndex == selectedItemIndex ? NSOnState : NSOffState);
+		tabBarItem.state = (buttonIndex == selectedItemIndex ? NSControlStateValueOn : NSControlStateValueOff);
         ++buttonIndex;
     }];
 }
