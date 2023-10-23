@@ -70,11 +70,11 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     return tabBarItemButton.image;  
 }
 
-- (void) setTag:(NSUInteger)newTag {  
+- (void) setTag:(NSInteger)newTag {
     tabBarItemButton.tag = newTag; 
 }
 
-- (NSUInteger) tag {  
+- (NSInteger) tag {
     return tabBarItemButton.tag;    
 }
 
@@ -86,11 +86,11 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     return tabBarItemButton.toolTip;    
 }
 
-- (void) setKeyEquivalentModifierMask:(NSUInteger)newKeyEquivalentModifierMask {
-    tabBarItemButton.keyEquivalentModifierMask = newKeyEquivalentModifierMask; 
+- (void) setKeyEquivalentModifierMask:(NSEventModifierFlags)newKeyEquivalentModifierMask {
+    tabBarItemButton.keyEquivalentModifierMask = newKeyEquivalentModifierMask;
 }
 
-- (NSUInteger) keyEquivalentModifierMask {
+- (NSEventModifierFlags) keyEquivalentModifierMask {
     return tabBarItemButton.keyEquivalentModifierMask; 
 }
 
@@ -120,7 +120,7 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
 - (id)init {
     self = [super init];
     if (self) {
-        self.bezelStyle = NSTexturedRoundedBezelStyle;
+		self.bezelStyle = NSBezelStyleToolbar;
     }
     return self;
 }
